@@ -2,6 +2,8 @@ pipeline {
     agent any
 
     environment {
+        DOCKER_USERNAME = 'manaswitha2'
+        DOCKER_PASSWORD = 'D@123manu'
         DOCKERHUB_CREDENTIALS = credentials('DOCKERHUB_CREDENTIALS')
         IMAGE_NAME = 'manaswitha2/dockerrepo'
         IMAGE_TAG = 'latest'
@@ -21,7 +23,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    def dockerImage = "${manaswitha2/dockerrepo}:${latest}"
+                    def dockerImage = "manaswitha2/dockerrepo:latest"
 
                     // Build the Docker image
                     sh "docker build -t ${dockerImage} ."
@@ -32,7 +34,7 @@ pipeline {
         stage('Push Docker Image') {
             steps {
                 script {
-                    def dockerImage = "${manaswitha2/dockerrepo}:${latest}"
+                    def dockerImage = "manaswitha2/dockerrepo:latest"
 
                     // Log in to Docker Hub using the credentials
                     withCredentials([usernamePassword(credentialsId: DOCKERHUB_CREDENTIALS, usernameVariable: 'manaswitha2', passwordVariable: 'D@123manu')]) {
