@@ -34,7 +34,7 @@ pipeline {
                     def dockerImage = "${IMAGE_NAME}:${IMAGE_TAG}"
 
                     // Log in to Docker Hub using the credentials
-                    withCredentials([usernamePassword(credentialsId: DOCKERHUB_CREDENTIALS, usernameVariable: 'manaswitha2', passwordVariable: 'D@123manu')]) {
+                    withCredentials([usernamePassword(credentialsId: DOCKERHUB_CREDENTIALS, usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
                         sh "docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}"
                     }
 
