@@ -1,4 +1,4 @@
 FROM alpine
 MAINTAINER mrevuri@memphis.edu
-RUN apk update && apk install java
+RUN apk update && apk add openjdk11
 CMD ["echo", "hello"]
