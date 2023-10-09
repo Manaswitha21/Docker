@@ -35,8 +35,7 @@ pipeline {
                     def DOCKERHUB_PASSWORD = 'D@123manu'
                     def dockerImage = "${IMAGE_NAME}:${IMAGE_TAG}"
 
-                 
-}
+                    
 
 
                     // Push the Docker image to Docker Hub
