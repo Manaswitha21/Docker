@@ -28,7 +28,7 @@ pipeline {
         stage('Push Docker Image') {
             steps {
                 script {
-                    def DOCKERHUB_USERNAME = 'Manaswitha2'
+                    def DOCKERHUB_USERNAME = 'manaswitha2'
                     def DOCKERHUB_PASSWORD = 'D@123manu'
                     def dockerImage = "${IMAGE_NAME}:${IMAGE_TAG}"
 
