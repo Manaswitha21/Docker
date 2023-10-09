@@ -35,7 +35,7 @@ pipeline {
                 
 
                     // Log in to Docker Hub using the credentials
-                    withCredentials([usernamePassword(credentialsId: 'DOCKERHUB_CREDENTIALS', usernameVariable: 'DOCKERHUB_USERNAME', passwordVariable: 'DOCKERHUB_PASSWORD')]) {
+                    
     sh "docker login -u ${DOCKERHUB_USERNAME} -p ${DOCKERHUB_PASSWORD}"
 }
 
@@ -49,7 +49,7 @@ pipeline {
             }
         }
     }    
-}
+
 
 
 
