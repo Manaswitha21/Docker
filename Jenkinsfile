@@ -9,7 +9,7 @@ pipeline {
         IMAGE_TAG = 'latest'
         GITHUB_CREDENTIALS = credentials('GITHUB_CREDENTIALS')
     }
-    }
+
 
     stages {
         stage('Checkout') {
@@ -46,7 +46,8 @@ pipeline {
                 }
             }
         }
-    }
+    }    
+}
 
 
 
