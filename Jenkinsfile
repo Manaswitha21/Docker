@@ -23,7 +23,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    def dockerImage = "manaswitha2/dockerrepo:latest"
+                    def dockerImage ="${IMAGE_NAME}:${IMAGE_TAG}"
 
                     // Build the Docker image
                     sh "docker build -t ${dockerImage} ."
@@ -34,11 +34,11 @@ pipeline {
         stage('Push Docker Image') {
             steps {
                 script {
-                    def dockerImage = "manaswitha2/dockerrepo:latest"
+                    def dockerImage = "${IMAGE_NAME}:${IMAGE_TAG}"
 
                     // Log in to Docker Hub using the credentials
                     withCredentials([usernamePassword(credentialsId: DOCKERHUB_CREDENTIALS, usernameVariable: 'manaswitha2', passwordVariable: 'D@123manu')]) {
-                        sh "docker login -u ${manaswitha2} -p ${D@123manu}"
+                        sh "docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}"
                     }
 
                     // Push the Docker image to Docker Hub
