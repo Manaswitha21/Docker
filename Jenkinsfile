@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_USERNAME = 'manaswitha2'
+        DOCKER_USERNAME = 'Manaswitha2'
         DOCKER_PASSWORD = 'D@123manu'
         DOCKERHUB_CREDENTIALS = credentials('DOCKERHUB_CREDENTIALS')
         IMAGE_NAME = 'manaswitha2/dockerrepo'
